@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="v7_bd_axi_chip2chip_0_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_axi_chip2chip_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="v7_bd_proc_sys_reset_0_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_proc_sys_reset_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="v7_bd_clk_wiz_0_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_clk_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="v7_bd_auto_pc_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="v7_bd_xadc_wiz_0_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_xadc_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="v7_bd_xbar_0_synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/v7_bd_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="v7_bd_axi_chip2chip_0_0_synth_1"/>
+		<Parent Id="v7_bd_proc_sys_reset_0_0_synth_1"/>
+		<Parent Id="v7_bd_clk_wiz_0_0_synth_1"/>
+		<Parent Id="v7_bd_auto_pc_0_synth_1"/>
+		<Parent Id="v7_bd_xadc_wiz_0_0_synth_1"/>
+		<Parent Id="v7_bd_xbar_0_synth_1"/>
+	</Run>
+</Runs>
+

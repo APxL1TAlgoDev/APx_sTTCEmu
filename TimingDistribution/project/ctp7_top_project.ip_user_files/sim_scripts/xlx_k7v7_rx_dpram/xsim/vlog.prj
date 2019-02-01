@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../ip/xlx_k7v7_rx_dpram/xlx_k7v7_rx_dpram_sim_netlist.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

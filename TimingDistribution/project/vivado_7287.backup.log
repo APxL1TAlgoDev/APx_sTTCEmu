@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Nov 27 12:25:17 2018
+# Process ID: 7287
+# Current directory: /home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top
+# Command line: vivado -mode batch -source /home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/submodules/ruckus/vivado_sources.tcl
+# Log file: /home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/vivado.log
+# Journal file: /home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/vivado.jou
+#-----------------------------------------------------------
+source /home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/submodules/ruckus/vivado_sources.tcl
+# source -quiet $::env(RUCKUS_DIR)/vivado_env_var.tcl
+# source -quiet $::env(RUCKUS_DIR)/vivado_proc.tcl
+# CheckWritePermission
+# CheckGitVersion
+couldn't execute "git-lfs": no such file or directory
+    while executing
+"exec git-lfs version"
+    (procedure "CheckGitVersion" line 14)
+    invoked from within
+"CheckGitVersion"
+    (file "/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/submodules/ruckus/vivado_sources.tcl" line 24)
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 27 12:25:23 2018...

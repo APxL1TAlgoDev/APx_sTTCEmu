@@ -1,0 +1,1 @@
+/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/firmware/ip_repo/ttc_mmcm.xci

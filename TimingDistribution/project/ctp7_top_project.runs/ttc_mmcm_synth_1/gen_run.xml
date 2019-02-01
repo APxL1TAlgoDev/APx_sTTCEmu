@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="ttc_mmcm_synth_1" LaunchPart="xc7vx690tffg1927-2" LaunchTime="1543343531">
+  <File Type="RDS-UTIL-PB" Name="ttc_mmcm_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ttc_mmcm_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ttc_mmcm.vds"/>
+  <File Type="RDS-DCP" Name="ttc_mmcm.dcp"/>
+  <File Type="PA-TCL" Name="ttc_mmcm.tcl"/>
+  <File Type="REPORTS-TCL" Name="ttc_mmcm_reports.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ttc_mmcm">
+    <File Path="$PSRCDIR/sources_1/ip/ttc_mmcm/ttc_mmcm.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../firmware/ip_repo/ttc_mmcm.xci"/>
+        <Attr Name="ImportTime" Val="1543341895"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ttc_mmcm"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ttc_mmcm">
+    <File Path="$PSRCDIR/sources_1/ip/ttc_mmcm/ttc_mmcm.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../firmware/ip_repo/ttc_mmcm.xci"/>
+        <Attr Name="ImportTime" Val="1543341895"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ttc_mmcm"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

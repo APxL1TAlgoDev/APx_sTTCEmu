@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jan 17 09:24:06 2019
+# Process ID: 11152
+# Current directory: /home/rrivera/CorrelatorTrigger/TimingDistribution
+# Command line: vivado
+# Log file: /home/rrivera/CorrelatorTrigger/TimingDistribution/vivado.log
+# Journal file: /home/rrivera/CorrelatorTrigger/TimingDistribution/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/rrivera/CorrelatorTrigger/TimingDistribution/GEM_AMC-3/ctp7/work_dir/gem_amc.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/rrivera/CorrelatorTrigger/TimingDistribution/GEM_AMC-3/ctp7/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/local/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:50 ; elapsed = 00:00:19 . Memory (MB): peak = 6750.258 ; gain = 535.195 ; free physical = 103695 ; free virtual = 168200
