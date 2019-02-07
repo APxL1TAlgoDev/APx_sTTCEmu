@@ -1,1 +1,0 @@
-/home/rrivera/CorrelatorTrigger/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/firmware/bd/2017.3/v7_bd.bd
