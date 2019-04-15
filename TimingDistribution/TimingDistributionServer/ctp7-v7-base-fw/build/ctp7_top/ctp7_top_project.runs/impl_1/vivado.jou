@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Mar 20 11:51:34 2019
-# Process ID: 3949
-# Current directory: /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1
+# Start of session at: Mon Apr 15 14:03:36 2019
+# Process ID: 96698
+# Current directory: /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1
 # Command line: vivado -log ctp7_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ctp7_top.tcl -notrace
-# Log file: /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1/ctp7_top.vdi
-# Journal file: /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1/vivado.jou
+# Log file: /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1/ctp7_top.vdi
+# Journal file: /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
 source ctp7_top.tcl -notrace

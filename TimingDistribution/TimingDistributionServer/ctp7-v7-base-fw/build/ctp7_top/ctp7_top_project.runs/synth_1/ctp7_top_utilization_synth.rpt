@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Wed Mar 20 11:40:02 2019
+| Date         : Mon Apr 15 14:03:35 2019
 | Host         : correlator2.fnal.gov running 64-bit Scientific Linux release 7.6 (Nitrogen)
 | Command      : report_utilization -file ctp7_top_utilization_synth.rpt -pb ctp7_top_utilization_synth.pb
 | Design       : ctp7_top
@@ -35,8 +35,8 @@ Table of Contents
 |   LUT as Memory            |   254 |     0 |    174200 |  0.15 |
 |     LUT as Distributed RAM |   216 |     0 |           |       |
 |     LUT as Shift Register  |    38 |     0 |           |       |
-| Slice Registers            | 42105 |     0 |    866400 |  4.86 |
-|   Register as Flip Flop    | 42105 |     0 |    866400 |  4.86 |
+| Slice Registers            | 42111 |     0 |    866400 |  4.86 |
+|   Register as Flip Flop    | 42111 |     0 |    866400 |  4.86 |
 |   Register as Latch        |     0 |     0 |    866400 |  0.00 |
 | F7 Muxes                   |   144 |     0 |    216600 |  0.07 |
 | F8 Muxes                   |    72 |     0 |    108300 |  0.07 |
@@ -59,7 +59,7 @@ Table of Contents
 | 1467  |          Yes |           - |          Set |
 | 17712 |          Yes |           - |        Reset |
 | 432   |          Yes |         Set |            - |
-| 22494 |          Yes |       Reset |            - |
+| 22500 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -154,12 +154,12 @@ Table of Contents
 |    Ref Name   |  Used | Functional Category |
 +---------------+-------+---------------------+
 | LUT6          | 40489 |                 LUT |
-| FDRE          | 22494 |        Flop & Latch |
+| FDRE          | 22500 |        Flop & Latch |
 | FDCE          | 17712 |        Flop & Latch |
 | LUT5          | 10815 |                 LUT |
-| LUT3          |  9213 |                 LUT |
+| LUT3          |  9219 |                 LUT |
 | LUT4          |  8793 |                 LUT |
-| LUT2          |  5960 |                 LUT |
+| LUT2          |  5954 |                 LUT |
 | LUT1          |  3475 |                 LUT |
 | CARRY4        |  1727 |          CarryLogic |
 | FDPE          |  1467 |        Flop & Latch |

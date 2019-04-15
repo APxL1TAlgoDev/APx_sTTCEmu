@@ -1,1 +1,4 @@
 archive
+vivado.*
+vivado_*
+.jobs

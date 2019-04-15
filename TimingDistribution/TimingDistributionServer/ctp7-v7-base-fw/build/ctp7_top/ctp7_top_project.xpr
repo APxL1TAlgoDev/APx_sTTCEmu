@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="/home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.xpr">
+<Project Version="7" Minor="38" Path="/data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="d8bf82ee1ce84c018c8db6491be14731"/>
@@ -904,7 +904,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/constrs_1/new/ctp7_top.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/ctp7_top.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

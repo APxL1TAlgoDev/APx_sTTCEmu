@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/synth_1'
+HD_PWD='/data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

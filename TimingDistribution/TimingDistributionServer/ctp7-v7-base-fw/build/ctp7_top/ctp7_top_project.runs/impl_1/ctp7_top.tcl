@@ -149,22 +149,23 @@ set rc [catch {
   create_project -in_memory -part xc7vx690tffg1927-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.cache/wt [current_project]
-  set_property parent.project_path /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.xpr [current_project]
-  set_property ip_repo_paths /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/firmware/ip_repo [current_project]
+  set_property webtalk.parent_dir /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.cache/wt [current_project]
+  set_property parent.project_path /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.xpr [current_project]
+  set_property ip_repo_paths /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/firmware/ip_repo [current_project]
   set_property ip_output_repo /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionClient/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/synth_1/ctp7_top.dcp
+  add_files -quiet /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.runs/synth_1/ctp7_top.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  read_ip -quiet /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/ttc_mmcm/ip/ttc_mmcm/ttc_mmcm.xci
-  read_ip -quiet /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/xlx_k7v7_tx_dpram/xlx_k7v7_tx_dpram.xci
-  read_ip -quiet /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/xlx_k7v7_rx_dpram/xlx_k7v7_rx_dpram.xci
-  read_ip -quiet /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/sync_fifo_gth_40/sync_fifo_gth_40.xci
-  add_files /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/bd/2017/v7_bd.bd
+  read_ip -quiet /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/ttc_mmcm/ip/ttc_mmcm/ttc_mmcm.xci
+  read_ip -quiet /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/xlx_k7v7_tx_dpram/xlx_k7v7_tx_dpram.xci
+  read_ip -quiet /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/xlx_k7v7_rx_dpram/xlx_k7v7_rx_dpram.xci
+  read_ip -quiet /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/ip/sync_fifo_gth_40/sync_fifo_gth_40.xci
+  add_files /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ip_and_bd_source/bd/2017/v7_bd.bd
   set_param project.isImplRun false
-  read_xdc /home/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/constraints_source/constraints.xdc
+  read_xdc /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/constraints_source/constraints.xdc
+  read_xdc /data/rrivera/CorrelatorTrigger/APx_sTTCEmu/TimingDistribution/TimingDistributionServer/ctp7-v7-base-fw/build/ctp7_top/ctp7_top_project.srcs/constrs_1/new/ctp7_top.xdc
   set_param project.isImplRun true
   link_design -top ctp7_top -part xc7vx690tffg1927-2
   set_param project.isImplRun false

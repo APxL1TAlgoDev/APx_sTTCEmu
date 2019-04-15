@@ -325,9 +325,8 @@ begin
 
 
 
-    --====================== GEM project's gth_wrapper and GBT
-    
-  GEM_style_source_links : for i in 0 to 0 generate
+  --====================== GEM project's gth_wrapper and GBT    
+  GEM_style_source_links : if TRUE generate
   
   
     signal ttc_clks_i  : t_ttc_clks;
@@ -372,12 +371,23 @@ begin
     signal link_reset : std_logic := '1'; --init to reset
     
     
+    ---- for gth defaults
+    signal gth_default_tx_ctrl      : t_gth_tx_ctrl;
+    signal gth_default_rx_ctrl      : t_gth_rx_ctrl;
+    signal gth_default_misc_ctrl    : t_gth_misc_ctrl;
+    
+    
+    
     ---- for gbt
     signal gbt_link_status_arr      : t_gbt_link_status_arr(g_NUM_OF_GTH_GTs - 1 downto 0);
     signal gbt_rx_data_valid_arr    : std_logic_vector(g_NUM_OF_GTH_GTs - 1 downto 0);
     signal gbt_rx_data_arr          : t_gbt_frame_array(g_NUM_OF_GTH_GTs - 1 downto 0);
     signal gbt_tx_data_arr          : t_gbt_frame_array(g_NUM_OF_GTH_GTs - 1 downto 0);
     signal gbt_tx_data_source       : t_gbt_frame;
+    
+    
+    
+    
     
     attribute mark_debug : string;
     attribute mark_debug of reset : signal is "true";
@@ -492,8 +502,10 @@ begin
               link_status_arr_o           => gbt_link_status_arr
           );
         
+        
+        --======================================
         -- create rx debug
-        gen_rx_debug : for j in 0 to 0 generate 
+        gen_rx_debug : if TRUE generate 
               
               
             type t_gbt_ttc_array is array(integer range <>) of std_logic_vector(NUM_OF_TTC_CMDS-1 downto 0);
@@ -513,10 +525,57 @@ begin
             end generate;
                     
         end generate; 
+        -- end create rx debug
+        --======================================
+        
+        --======================================
+        -- create gth defaults fanout
+        
+        -- tx ctrl defaults
+        gth_default_tx_ctrl.txsysclksel     <= "00";
+        gth_default_tx_ctrl.TXOUTCLKSEL     <= "011";
+        
+        gth_default_tx_ctrl.txpostcursor    <= (others => '0');
+        gth_default_tx_ctrl.txprecursor     <= (others => '0');
+        gth_default_tx_ctrl.txdiffctrl      <= "1000"; --mVPPD = 0.807
+        gth_default_tx_ctrl.txinhibit       <= '0';
+        gth_default_tx_ctrl.txmaincursor    <= (others => '0');
+        
+        gth_default_tx_ctrl.txpolarity      <= '0';
+        gth_default_tx_ctrl.txprbssel       <= (others => '0');
+        gth_default_tx_ctrl.txprbsforceerr  <= '0';
+        
+        -- rx ctrl defaults
+        gth_default_rx_ctrl.rxsysclksel     <= "00";
+        gth_default_rx_ctrl.RXOUTCLKSEL     <= "010";
+        
+        gth_default_rx_ctrl.rxpolarity      <= '0';
+        gth_default_rx_ctrl.rxlpmen         <= '0';
+        gth_default_rx_ctrl.rxbufreset      <= '0';
+        
+        gth_default_rx_ctrl.rxprbssel       <= (others => '0');
+        gth_default_rx_ctrl.rxprbscntreset  <= '0';
+        gth_default_rx_ctrl.rxpd            <= "00"; -- else "11"
+        
+        -- misc ctrl defaults
+        gth_default_misc_ctrl.loopback        <= "000"; -- else "010"
+        gth_default_misc_ctrl.eyescanreset    <= '0';        
+        gth_default_misc_ctrl.eyescantrigger  <= '0';
+        
+        gen_gth_defaults_fanout : for j in 0 to g_NUM_OF_GTH_GTs-1 generate 
+        begin
+            s_gth_tx_ctrl_arr(j)    <= gth_default_tx_ctrl; 
+            s_gth_rx_ctrl_arr(j)    <= gth_default_rx_ctrl; 
+            s_gth_misc_ctrl_arr(j)  <= gth_default_misc_ctrl; 
+        end generate;
+        -- end create gth defaults fanout
+        --======================================
+        
          
-          
+        
+        --======================================  
         -- create tx data
-        gen_tx_data : for j in 0 to 0 generate 
+        gen_tx_data : if TRUE generate 
         
             signal s_ttc_cmds_latch : t_ttc_cmds;              
             signal gen_ttc_cmds_sig : std_logic_vector(NUM_OF_TTC_CMDS-1 downto 0);
@@ -531,31 +590,31 @@ begin
             --gbt data is 84 bits, and top 4 bits are reserved for ASIC use
             --  for now, we are just using low 7 bits
           
-          process(ttc_clks_i.clk_120) -- equivalent to s_clk_gth_tx_usrclk_arr(:)
-          begin
+            process(ttc_clks_i.clk_120) -- equivalent to s_clk_gth_tx_usrclk_arr(:)
+            begin
           
-            if (rising_edge(ttc_clks_i.clk_120)) then
-                s_ttc_cmds_latch <= s_ttc_cmds;
-                
-                gbt_tx_data_source(0) <= s_ttc_cmds_latch.l1a or
-                    ((not gen_ttc_cmds_sig(0)) and gen_ttc_cmds_cnt(0));
-                gbt_tx_data_source(1) <= s_ttc_cmds_latch.bc0 or
-                    ((not gen_ttc_cmds_sig(1)) and gen_ttc_cmds_cnt(1));
-                gbt_tx_data_source(2) <= s_ttc_cmds_latch.resync or
-                    ((not gen_ttc_cmds_sig(2)) and gen_ttc_cmds_cnt(2));
-                gbt_tx_data_source(3) <= s_ttc_cmds_latch.start or
-                    ((not gen_ttc_cmds_sig(3)) and gen_ttc_cmds_cnt(3));
-                gbt_tx_data_source(4) <= s_ttc_cmds_latch.stop or
-                    ((not gen_ttc_cmds_sig(4)) and gen_ttc_cmds_cnt(4));
-                gbt_tx_data_source(5) <= s_ttc_cmds_latch.ec0 or
-                    ((not gen_ttc_cmds_sig(5)) and gen_ttc_cmds_cnt(5));
-                gbt_tx_data_source(6) <= s_ttc_cmds_latch.test_sync or
-                    ((not gen_ttc_cmds_sig(6)) and gen_ttc_cmds_cnt(6));
-            end if;
+                if (rising_edge(ttc_clks_i.clk_120)) then
+                    s_ttc_cmds_latch <= s_ttc_cmds;
+                    
+                    gbt_tx_data_source(0) <= s_ttc_cmds_latch.l1a or
+                        ((not gen_ttc_cmds_sig(0)) and gen_ttc_cmds_cnt(0));
+                    gbt_tx_data_source(1) <= s_ttc_cmds_latch.bc0 or
+                        ((not gen_ttc_cmds_sig(1)) and gen_ttc_cmds_cnt(1));
+                    gbt_tx_data_source(2) <= s_ttc_cmds_latch.resync or
+                        ((not gen_ttc_cmds_sig(2)) and gen_ttc_cmds_cnt(2));
+                    gbt_tx_data_source(3) <= s_ttc_cmds_latch.start or
+                        ((not gen_ttc_cmds_sig(3)) and gen_ttc_cmds_cnt(3));
+                    gbt_tx_data_source(4) <= s_ttc_cmds_latch.stop or
+                        ((not gen_ttc_cmds_sig(4)) and gen_ttc_cmds_cnt(4));
+                    gbt_tx_data_source(5) <= s_ttc_cmds_latch.ec0 or
+                        ((not gen_ttc_cmds_sig(5)) and gen_ttc_cmds_cnt(5));
+                    gbt_tx_data_source(6) <= s_ttc_cmds_latch.test_sync or
+                        ((not gen_ttc_cmds_sig(6)) and gen_ttc_cmds_cnt(6));
+                end if;
             
-          end process;
+            end process;
           
-            gen_fake_ttc_cmds : for k in 0 to 0 generate
+            gen_fake_ttc_cmds : for k in 0 to 6 generate
             begin
                 process(ttc_clks_i.clk_120) -- equivalent to s_clk_gth_tx_usrclk_arr(:)
                 begin
@@ -572,9 +631,15 @@ begin
         -- create tx data fanout
         gen_tx_data_fanout : for j in 0 to g_NUM_OF_GTH_GTs-1 generate 
         begin
-          gbt_tx_data_arr(j) <= gbt_tx_data_source; 
+           gbt_tx_data_arr(j) <= gbt_tx_data_source; 
         end generate;
         
+        -- end create tx data
+        --======================================  
+                
+                
+                
+        --======================================  
         -- create link reset fanout
         gen_link_reset_fanout : for j in 0 to g_NUM_OF_GTH_GTs-1 generate 
         begin  
@@ -584,8 +649,7 @@ begin
         gen_link_common_reset_fanout : for j in 0 to g_NUM_OF_GTH_GTs/4-1 generate 
         begin  
             s_gth_common_reset(j) <= link_reset; 
-        end generate;
-                
+        end generate;                
         
         -- create reset and link_reset for ~1 second
         gen_reset : for j in 0 to 0 generate 
@@ -634,10 +698,11 @@ begin
            
             end process;
         end generate;
-         
+        -- end create link reset and fanout
+        --======================================  
              
-     end generate;
-     
+  end generate;
+  --====================== end GEM project's gth_wrapper and GBT   
      
       
 end ctp7_top_arch;
